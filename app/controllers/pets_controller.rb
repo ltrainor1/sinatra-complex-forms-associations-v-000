@@ -20,7 +20,7 @@ require 'pry'
   end
 
   get '/pets/:id' do
-    @pet = Pet.find(params[:id].to_i)
+    @pet = Pet.find(params[:pet][:id])
     erb :'/pets/show'
   end
 
