@@ -28,7 +28,7 @@ require 'pry'
   post '/pets/:id' do
     binding.pry
     @owner = Owner.find_by(params[:id])
-    @pet = Pet.update(params[:id], {name => params[:pet_name], owner_name => params[:owner_name]})
+    @pet = Pet.update(params[:id], {name: params[:pet_name], owner: @owner})
     redirect to "pets/#{@pet.id}"
   end
 
