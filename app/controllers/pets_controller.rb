@@ -26,6 +26,7 @@ require 'pry'
   end
 
   post '/pets/:id' do
+    @pet = Pet.update(params[:id], {name => params[:pet_name], owner_name => params[:owner_name]})
     redirect to "pets/#{@pet.id}"
   end
 
@@ -33,4 +34,6 @@ require 'pry'
     @pet = Pet.find(params[:id])
     erb :'/pets/edit'
   end
+
+    
 end
