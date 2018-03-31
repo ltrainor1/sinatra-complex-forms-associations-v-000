@@ -31,6 +31,7 @@ require 'pry'
       @pet = Pet.update(params[:id], {name: params[:pet_name], owner_id: @owner.id})
     else
       @pet = Pet.update(params[:id], {name: params[:pet_name], owner_id: params[:id]})
+    end 
     redirect to "pets/#{@pet.id}"
   end
 
