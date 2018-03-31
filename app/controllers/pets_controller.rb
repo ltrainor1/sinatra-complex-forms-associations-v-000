@@ -26,6 +26,7 @@ require 'pry'
   end
 
   post '/pets/:id' do
+    binding.pry
     if params[:owner][:name] != ""
       @owner = Owner.create(name: params[:owner][:name])
       @pet = Pet.update(params[:id], {name: params[:pet_name], owner_id: @owner.id})
