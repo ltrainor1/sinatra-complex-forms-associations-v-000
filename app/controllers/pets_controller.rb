@@ -20,7 +20,8 @@ require 'pry'
   end
 
   get '/pets/:id' do
-    @pet = Pet.find(params[:pet][:id])
+    binding.pry
+    @pet = Pet.find(params[:id])
     erb :'/pets/show'
   end
 
