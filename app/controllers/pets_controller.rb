@@ -35,5 +35,5 @@ require 'pry'
     erb :'/pets/edit'
   end
 
-    
+
 end
